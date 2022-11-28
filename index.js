@@ -15,6 +15,11 @@ app.use("/", redirectUrl);
 app.use("/api/auth", auth_route);
 app.use("/api/urlPrivate", urlPrivate_route);
 
+app.get("/", (req, res) => {
+  res.send("Working fine...");
+});
+
+
 connectDB()
   .then(() =>
     app.listen(process.env.PORT, () => {
